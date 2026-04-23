@@ -39,11 +39,11 @@ html.lenis body {
 
 :root {
   /* Colors */
-  --color-bg: #0a0a0a;
+  --color-bg: #000;
   --color-bg-alt: #111111;
   --color-bg-card: #161616;
   --color-bg-light: #f2f2f2;
-  --color-text: #ffffff;
+  --color-text: #EDD9A3;
   --color-text-muted: rgba(255, 255, 255, 0.45);
   --color-text-dark: #1a1a1a;
   --color-accent: #c8ff00;
@@ -553,19 +553,34 @@ button {
   justify-content: center;
   padding: 120px var(--container-pad) 60px;
   overflow: hidden;
+  background: #050510;
 }
 
-.hero__gradient-bg {
+/* ─── Video Background ─── */
+.hero__video-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.hero__bg-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.8) saturate(1.35) contrast(1.1);
+}
+
+.hero__video-overlay {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 80% 60% at 30% 50%, rgba(167, 139, 250, 0.3), transparent),
-    radial-gradient(ellipse 60% 80% at 70% 30%, rgba(236, 72, 153, 0.25), transparent),
-    radial-gradient(ellipse 50% 50% at 60% 70%, rgba(96, 165, 250, 0.2), transparent),
-    radial-gradient(ellipse 40% 40% at 80% 60%, rgba(249, 168, 212, 0.15), transparent),
-    linear-gradient(135deg, #e8e0d4 0%, #d4cfc8 20%, #c8d0dc 40%, #b8c8e0 60%, #d0b8d8 80%, #e0c8d0 100%);
-  z-index: 0;
-  contain: layout paint;
+    linear-gradient(180deg, rgba(5, 5, 16, 0.4) 0%, rgba(5, 5, 16, 0.1) 35%, rgba(5, 5, 16, 0.05) 60%, rgba(5, 5, 16, 0.45) 100%),
+    radial-gradient(ellipse 80% 70% at 20% 60%, rgba(167, 139, 250, 0.12), transparent),
+    radial-gradient(ellipse 60% 60% at 75% 35%, rgba(96, 165, 250, 0.1), transparent),
+    radial-gradient(ellipse 50% 50% at 50% 80%, rgba(236, 72, 153, 0.06), transparent);
+  pointer-events: none;
 }
 
 .hero__content {
@@ -581,8 +596,9 @@ button {
   font-weight: 900;
   line-height: 1.0;
   letter-spacing: -0.03em;
-  color: var(--color-text-dark);
+  color: #ffffff;
   margin-bottom: 40px;
+  text-shadow: 10px 8px 10px rgba(0, 0, 0, 0.4);
 }
 
 .hero__line {
@@ -607,6 +623,7 @@ button {
   border-radius: 50%;
   overflow: hidden;
   background: #1a1a1a;
+  box-shadow: 0 0 30px rgba(167, 139, 250, 0.3);
 }
 
 .hero__o-video {
@@ -622,16 +639,23 @@ button {
   bottom: -20px;
   right: 0;
   max-width: 420px;
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  padding: 28px 30px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
 .hero__description {
   font-size: var(--font-body);
   line-height: 1.7;
-  color: rgba(26, 26, 26, 0.7);
+  color: rgba(255, 255, 255, 0.75);
 }
 
 .hero__description strong {
-  color: var(--color-text-dark);
+  color: #ffffff;
   font-weight: 700;
 }
 
@@ -668,7 +692,7 @@ button {
 /* ── Primary: "Get Started" ── */
 .hero__cta--primary {
   background: var(--color-text-dark);
-  color: #fff;
+  color: #ffffff;
   border: 2px solid var(--color-text-dark);
 }
 
@@ -682,9 +706,9 @@ button {
   height: 100%;
   background: linear-gradient(120deg,
       transparent 0%,
-      rgba(255, 255, 255, 0.15) 40%,
-      rgba(255, 255, 255, 0.25) 50%,
-      rgba(255, 255, 255, 0.15) 60%,
+      rgba(167, 139, 250, 0.2) 40%,
+      rgba(167, 139, 250, 0.35) 50%,
+      rgba(167, 139, 250, 0.2) 60%,
       transparent 100%);
   transition: none;
   pointer-events: none;
@@ -707,13 +731,13 @@ button {
 .hero__cta--primary:hover {
   transform: translateY(-3px);
   box-shadow:
-    0 8px 28px rgba(26, 26, 26, 0.25),
-    0 2px 8px rgba(26, 26, 26, 0.15);
+    0 8px 28px rgba(167, 139, 250, 0.3),
+    0 2px 8px rgba(255, 255, 255, 0.15);
 }
 
 .hero__cta--primary:active {
   transform: translateY(0) scale(0.97);
-  box-shadow: 0 2px 8px rgba(26, 26, 26, 0.2);
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.2);
   transition: transform 0.1s ease, box-shadow 0.1s ease;
 }
 
@@ -728,8 +752,8 @@ button {
 /* ── WhatsApp: "Connect on WhatsApp" ── */
 .hero__cta--whatsapp {
   background: transparent;
-  color: var(--color-text-dark);
-  border: 2px solid rgba(26, 26, 26, 0.2);
+  color: #ffffff;
+  border: 2px solid rgba(255, 255, 255, 0.25);
 }
 
 .hero__cta-wa-icon {
@@ -799,13 +823,13 @@ button {
 
 .hero__badge-icon {
   font-size: 1.1rem;
-  color: var(--color-text-dark);
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .hero__badge-text {
   font-size: var(--font-small);
   font-weight: 500;
-  color: var(--color-text-dark);
+  color: rgba(255, 255, 255, 0.85);
   letter-spacing: 0.02em;
 }
 
@@ -1443,6 +1467,7 @@ button {
 
 .partner-logo:hover {
   color: rgba(255, 255, 255, 0.7);
+  /* color: var(--color-text); */
 }
 
 /* ═══════════════════════════════════════════════════

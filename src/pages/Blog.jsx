@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import useGSAP, { gsap } from '../hooks/useGSAP';
-import useHeroCanvas from '../hooks/useHeroCanvas';
 import ArrowIcon from '../components/ArrowIcon';
 import '../styles/blog.css';
 
@@ -27,7 +26,6 @@ const filters = [
 
 export default function Blog() {
   const [activeFilter, setActiveFilter] = useState('all');
-  const canvasRef = useHeroCanvas('#f0ede8', 'multiply', 0.2);
 
   useEffect(() => {
     let ticking = false;
@@ -63,8 +61,13 @@ export default function Blog() {
   return (
     <div className="blog-page" ref={containerRef}>
       {/* HERO */}
-      <section className="blog-hero" data-theme="light">
-        <div className="blog-hero__bg"><canvas ref={canvasRef}></canvas></div>
+      <section className="blog-hero" data-theme="dark">
+        <div className="blog-hero__bg">
+          <video className="blog-hero__video" autoPlay muted loop playsInline>
+            <source src="/assets/videos/bg_animated.mp4" type="video/mp4" />
+          </video>
+          <div className="blog-hero__overlay"></div>
+        </div>
         <div className="blog-hero__content">
           <h1 className="blog-hero__title">
             <div className="title-line"><span>News, insights,</span></div>

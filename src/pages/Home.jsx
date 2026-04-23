@@ -196,13 +196,18 @@ export default function Home() {
     "Their SEO work has made a real difference to our organic traffic. We're now ranking on page one for keywords we never thought we'd reach. Worth every rupee.",
   ];
 
-  const partners = ['Client Brand', 'Partner Co.', 'Brand Studio', 'Growth Inc.', 'MediaWorks', 'TechScale', 'NextLevel', 'BrandFirst', 'AdVenture', 'Starter Co.', 'LeadMax', 'DesignHub', 'ReachOut', 'MarketPro', 'PixelCraft'];
+  const partners = ['Education', 'Enterprise', 'Healthcare', 'Cafes', 'Public Sector', 'Consumer Goods', 'Automative', 'Real Estate', 'Tours & Travel', 'Lifestyle', 'Business Services', 'Beauty Care', 'Astrology', 'Clothing', 'Fine Jewelry'];
 
   return (
     <div ref={containerRef}>
       {/* HERO */}
-      <section className="hero" id="hero" data-theme="light">
-        <div className="hero__gradient-bg"></div>
+      <section className="hero" id="hero" data-theme="dark">
+        <div className="hero__video-bg">
+          <video className="hero__bg-video" autoPlay muted loop playsInline>
+            <source src="/assets/videos/bg_animated.mp4" type="video/mp4" />
+          </video>
+          <div className="hero__video-overlay"></div>
+        </div>
         <div className="hero__content">
           <h1 className="hero__title">
             <span className="hero__line">Bloom</span>

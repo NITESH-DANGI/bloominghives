@@ -1,12 +1,10 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import useGSAP, { gsap } from '../hooks/useGSAP';
-import useHeroCanvas from '../hooks/useHeroCanvas';
 import ArrowIcon from '../components/ArrowIcon';
 import '../styles/about.css';
 
 export default function About() {
-  const canvasRef = useHeroCanvas('#f0ede8', 'multiply', 0.2);
 
   // Floating CTA visibility
   useEffect(() => {
@@ -100,8 +98,13 @@ export default function About() {
   return (
     <div className="about-page" ref={containerRef}>
       {/* HERO */}
-      <section className="about-hero" data-theme="light">
-        <div className="about-hero__bg"><canvas ref={canvasRef}></canvas></div>
+      <section className="about-hero" data-theme="dark">
+        <div className="about-hero__bg">
+          <video className="about-hero__video" autoPlay muted loop playsInline>
+            <source src="/assets/videos/bg_animated.mp4" type="video/mp4" />
+          </video>
+          <div className="about-hero__overlay"></div>
+        </div>
         <div className="about-hero__content">
           <h1 className="about-hero__title">
             <div className="title-line"><span>Proudly</span></div>

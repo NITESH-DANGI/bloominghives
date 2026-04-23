@@ -53,7 +53,7 @@ export default function App() {
         <Route path="/service/:slug" element={<Service />} />
       </Routes>
 
-      <Footer wrapDark={footerWrapDark} />
+      <Footer />
       <FloatingCTA />
     </>
   );

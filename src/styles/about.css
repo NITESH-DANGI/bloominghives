@@ -18,18 +18,32 @@
   justify-content: flex-start;
   padding: 120px var(--container-pad) 80px;
   overflow: hidden;
+  background: #050510;
 }
 
 .about-hero__bg {
   position: absolute;
   inset: 0;
   z-index: 0;
+  overflow: hidden;
 }
 
-.about-hero__bg canvas {
+.about-hero__video {
   width: 100%;
   height: 100%;
+  object-fit: cover;
   display: block;
+  filter: brightness(0.8) saturate(1.35) contrast(1.1);
+}
+
+.about-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(5, 5, 16, 0.4) 0%, rgba(5, 5, 16, 0.1) 35%, rgba(5, 5, 16, 0.05) 60%, rgba(5, 5, 16, 0.45) 100%),
+    radial-gradient(ellipse 80% 70% at 20% 60%, rgba(167, 139, 250, 0.12), transparent),
+    radial-gradient(ellipse 60% 60% at 75% 35%, rgba(96, 165, 250, 0.1), transparent);
+  pointer-events: none;
 }
 
 .about-hero__content {
@@ -45,8 +59,9 @@
   font-weight: 900;
   line-height: 1.0;
   letter-spacing: -0.04em;
-  color: #1a1a1a;
+  color: #ffffff;
   text-transform: lowercase;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
 }
 
 .about-page .title-line {
@@ -68,7 +83,7 @@
   bottom: -60px;
   left: 0;
   font-size: 0.85rem;
-  color: rgba(26,26,26,0.4);
+  color: rgba(255, 255, 255, 0.4);
   font-weight: 500;
   letter-spacing: 0.05em;
 }
@@ -95,7 +110,7 @@
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -0.03em;
-  color: #1a1a1a;
+  color: #0D1B3E;
 }
 
 .about-mission__headline em {
@@ -157,7 +172,7 @@
 .value-card__title {
   font-size: clamp(1.4rem, 2.5vw, 2rem);
   font-weight: 800;
-  color: #1a1a1a;
+  color: #0D1B3E;
   margin-bottom: 16px;
   letter-spacing: -0.02em;
 }
@@ -197,7 +212,7 @@
   letter-spacing: -0.03em;
   line-height: 1;
   margin-bottom: 12px;
-  background: linear-gradient(135deg, #a78bfa, #ec4899, #60a5fa);
+  background: #EDD9A3;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -230,7 +245,7 @@
   font-size: clamp(2rem, 4vw, 3.5rem);
   font-weight: 800;
   letter-spacing: -0.03em;
-  color: #1a1a1a;
+  color: #0D1B3E;
   margin-bottom: 12px;
 }
 
@@ -274,7 +289,7 @@
 .about-service-item h3 {
   font-size: 1.15rem;
   font-weight: 700;
-  color: #1a1a1a;
+  color: #0D1B3E;
   margin-bottom: 12px;
 }
 
