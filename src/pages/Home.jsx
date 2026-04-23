@@ -367,8 +367,8 @@ export default function Home() {
       {/* PARTNERS */}
       <section className="partners" id="partners">
         <div className="partners__header">
-          <span className="outline-text reveal">OUR</span>
-          <span className="outline-text outline-text--indent reveal">PARTNERS</span>
+          <span className="outline-text reveal">Industries</span>
+          <span className="outline-text outline-text--indent reveal">We Empower</span>
         </div>
         <div className="partners__grid reveal">
           {partners.map(p => <div className="partner-logo" key={p}>{p}</div>)}

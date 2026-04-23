@@ -416,14 +416,6 @@ export default function Contact() {
               <span className="info-split__email-label">General Enquiries</span>
               <a href="mailto:Info@bloominghives.in" className="info-split__email-link">Info@bloominghives.in</a>
             </div>
-            <div className="info-split__email-block">
-              <span className="info-split__email-label">New Business</span>
-              <a href="mailto:business@bloominghives.in" className="info-split__email-link">business@bloominghives.in</a>
-            </div>
-            <div className="info-split__email-block">
-              <span className="info-split__email-label">Careers</span>
-              <a href="mailto:careers@bloominghives.in" className="info-split__email-link">careers@bloominghives.in</a>
-            </div>
             <div className="info-split__social-block">
               <h3 className="info-split__social-title">Follow us</h3>
               <a href="https://www.linkedin.com/company/bloominghives/" target="_blank" rel="noopener noreferrer" className="info-split__social-item">LinkedIn</a>
