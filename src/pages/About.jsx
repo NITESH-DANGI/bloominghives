@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import useGSAP, { gsap } from '../hooks/useGSAP';
 import ArrowIcon from '../components/ArrowIcon';
+import SEO from '../components/SEO';
 import '../styles/about.css';
 
 export default function About() {
@@ -97,6 +98,10 @@ export default function About() {
 
   return (
     <div className="about-page" ref={containerRef}>
+      <SEO
+        title="About Blooming Hives | Creative Digital Marketing Agency in Delhi"
+        description="Learn about Blooming Hives — a Delhi-based creative digital marketing agency that combines data-driven strategy with bold creative thinking to help brands grow across India."
+      />
       {/* HERO */}
       <section className="about-hero" data-theme="dark">
         <div className="about-hero__bg">

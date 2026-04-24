@@ -81,7 +81,7 @@ export default function MenuOverlay({ isOpen, onClose }) {
     >
       <div className="menu-overlay__inner">
         <ul className="menu-overlay__list">
-          <li><Link to="/#work" className="menu-overlay__link" onClick={handleClose}>Work</Link></li>
+          <li><Link to="/#work" className="menu-overlay__link" onClick={handleClose}>Home</Link></li>
           <li><Link to="/about" className={`menu-overlay__link${path === '/about' ? ' active' : ''}`} onClick={handleClose}>About</Link></li>
           <li className={servicesExpanded ? 'expanded' : ''}>
             <a href="#" className="menu-overlay__link" onClick={toggleServices}>Services <span className="menu-plus">+</span></a>

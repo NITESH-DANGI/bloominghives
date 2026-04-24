@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import useGSAP, { gsap } from '../hooks/useGSAP';
 import useHeroCanvas from '../hooks/useHeroCanvas';
 import ArrowIcon from '../components/ArrowIcon';
+import SEO from '../components/SEO';
 import '../styles/contact.css';
 
 const interestOptions = ['Social Media Management', 'Search Engine Optimization', 'Website Development', 'Google and Meta Ads', 'Content Writing', 'Video Editing', 'Graphic Designing', 'Photoshoot'];
@@ -247,6 +248,10 @@ export default function Contact() {
 
   return (
     <div className="contact-page" ref={containerRef}>
+      <SEO
+        title="Contact Blooming Hives | Get a Free Digital Marketing Consultation"
+        description="Get in touch with Blooming Hives for a free consultation. We offer SEO, social media, Google & Meta ads, web development, and more for businesses across India."
+      />
       {/* HERO */}
       <section className="contact-hero" data-theme="light">
         <div className="contact-hero__bg"><canvas ref={canvasRef}></canvas></div>

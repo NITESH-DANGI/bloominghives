@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import useGSAP, { gsap, ScrollTrigger } from '../hooks/useGSAP';
 import ArrowIcon from '../components/ArrowIcon';
 
+import SEO from '../components/SEO';
+
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const trackRef = useRef(null);
@@ -200,6 +202,10 @@ export default function Home() {
 
   return (
     <div ref={containerRef}>
+      <SEO
+        title="Blooming Hives | Digital Marketing Agency in Delhi, India"
+        description="Blooming Hives is a Delhi-based digital marketing agency offering SEO, social media management, Google & Meta ads, web development and more — serving businesses across India."
+      />
       {/* HERO */}
       <section className="hero" id="hero" data-theme="dark">
         <div className="hero__video-bg">

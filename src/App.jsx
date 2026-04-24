@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import useLenis from './hooks/useLenis';
 import useHeaderTheme from './hooks/useHeaderTheme';
 import Header from './components/Header';
@@ -51,6 +51,7 @@ export default function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/service/:slug" element={<Service />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
 
       <Footer />

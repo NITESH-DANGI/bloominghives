@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import useGSAP, { gsap } from '../hooks/useGSAP';
 import ArrowIcon from '../components/ArrowIcon';
+import SEO from '../components/SEO';
 import services, { serviceNavItems } from '../data/services';
 import '../styles/service.css';
 
@@ -105,6 +106,7 @@ export default function Service() {
 
   return (
     <div className="service-page" ref={containerRef} key={slug} data-theme="light">
+      <SEO title={data.metaTitle} description={data.metaDesc} />
       {/* HERO */}
       <section className="service-hero">
         <div className="service-hero__image">

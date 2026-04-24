@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import useGSAP, { gsap } from '../hooks/useGSAP';
 import ArrowIcon from '../components/ArrowIcon';
+import SEO from '../components/SEO';
 import '../styles/blog.css';
 
 const posts = [
@@ -60,6 +61,10 @@ export default function Blog() {
 
   return (
     <div className="blog-page" ref={containerRef}>
+      <SEO
+        title="Blog | Blooming Hives — Digital Marketing Insights & Tips"
+        description="Read the latest digital marketing insights, SEO tips, social media trends, and performance marketing strategies from Blooming Hives."
+      />
       {/* HERO */}
       <section className="blog-hero" data-theme="dark">
         <div className="blog-hero__bg">
