@@ -1,1 +1,6 @@
+# www to non-www redirect (301)
+https://www.bloominghives.in/*  https://bloominghives.in/:splat  301!
+http://www.bloominghives.in/*   https://bloominghives.in/:splat  301!
+
+# SPA fallback
 /*    /index.html   200

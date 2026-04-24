@@ -1,11 +1,17 @@
 import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 /**
- * SEO component that dynamically updates document title and meta description.
- * Use this in every page component to ensure unique SEO metadata.
+ * SEO component that dynamically updates document title, meta description,
+ * canonical URL, and Open Graph tags per page.
  */
 export default function SEO({ title, description }) {
+  const location = useLocation();
+
   useEffect(() => {
+    const baseUrl = 'https://bloominghives.in';
+    const currentUrl = `${baseUrl}${location.pathname}`;
+
     // Update document title
     if (title) {
       document.title = title;
@@ -24,27 +30,57 @@ export default function SEO({ title, description }) {
       }
     }
 
-    // Update Open Graph tags
-    if (title) {
-      let ogTitle = document.querySelector('meta[property="og:title"]');
-      if (!ogTitle) {
-        ogTitle = document.createElement('meta');
-        ogTitle.setAttribute('property', 'og:title');
-        document.head.appendChild(ogTitle);
-      }
-      ogTitle.setAttribute('content', title);
+    // Update canonical URL
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) {
+      canonical.setAttribute('href', currentUrl);
+    } else {
+      canonical = document.createElement('link');
+      canonical.rel = 'canonical';
+      canonical.href = currentUrl;
+      document.head.appendChild(canonical);
     }
 
-    if (description) {
-      let ogDesc = document.querySelector('meta[property="og:description"]');
-      if (!ogDesc) {
-        ogDesc = document.createElement('meta');
-        ogDesc.setAttribute('property', 'og:description');
-        document.head.appendChild(ogDesc);
+    // Update Open Graph tags
+    const ogTags = {
+      'og:title': title,
+      'og:description': description,
+      'og:url': currentUrl,
+    };
+
+    Object.entries(ogTags).forEach(([property, content]) => {
+      if (!content) return;
+      let tag = document.querySelector(`meta[property="${property}"]`);
+      if (tag) {
+        tag.setAttribute('content', content);
+      } else {
+        tag = document.createElement('meta');
+        tag.setAttribute('property', property);
+        tag.setAttribute('content', content);
+        document.head.appendChild(tag);
       }
-      ogDesc.setAttribute('content', description);
-    }
-  }, [title, description]);
+    });
+
+    // Update Twitter Card tags
+    const twitterTags = {
+      'twitter:title': title,
+      'twitter:description': description,
+    };
+
+    Object.entries(twitterTags).forEach(([name, content]) => {
+      if (!content) return;
+      let tag = document.querySelector(`meta[name="${name}"]`);
+      if (tag) {
+        tag.setAttribute('content', content);
+      } else {
+        tag = document.createElement('meta');
+        tag.name = name;
+        tag.content = content;
+        document.head.appendChild(tag);
+      }
+    });
+
+  }, [title, description, location.pathname]);
 
   return null;
 }

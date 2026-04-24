@@ -204,7 +204,7 @@ export default function Home() {
     <div ref={containerRef}>
       <SEO
         title="Blooming Hives | Digital Marketing Agency in Delhi, India"
-        description="Blooming Hives is a Delhi-based digital marketing agency offering SEO, social media management, Google & Meta ads, web development and more — serving businesses across India."
+        description="Blooming Hives is a Delhi-based digital marketing agency offering SEO, social media, Google & Meta ads, and web development across India."
       />
       {/* HERO */}
       <section className="hero" id="hero" data-theme="dark">
