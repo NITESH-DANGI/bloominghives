@@ -168,8 +168,8 @@ export default function Home() {
 
   const serviceCards = [
     { id: 'service-smm', title: 'Social Media Management', pills: ['Content Strategy', 'Community Management', 'Brand Consistency', 'Audience Engagement'], desc: 'We grow your brand\'s social presence with scroll-stopping content, strategic planning, and hands-on community management — turning followers into loyal customers.', link: '/service/smm', img: '/assets/Imagesforwebsite/1.png.jpg', imgAlt: 'Social Media Management - content planning and engagement' },
-    { id: 'service-seo', title: 'Search Engine Optimization', pills: ['Technical SEO', 'On-page SEO', 'Keyword Research', 'Link Building'], desc: 'Research-backed SEO strategies that push you up the rankings, drive high-intent organic traffic, and keep your brand visible month after month.', link: '/service/seo', img: 'assets/Imagesforwebsite/2.jpg', imgAlt: 'Search Engine Optimization analytics and rankings' },
-    { id: 'service-web', title: 'Website Development', pills: ['WordPress', 'Custom Development', 'Responsive Design', 'E-commerce'], desc: 'Fast, conversion-focused websites built to turn visitors into customers. From landing pages to full e-commerce stores — responsive and results-driven.', link: '/service/webdev', img: 'assets/Imagesforwebsite/3.jpg', imgAlt: 'Website Development - responsive designs on multiple devices' },
+    { id: 'service-seo', title: 'Search Engine Optimization', pills: ['Technical SEO', 'On-page SEO', 'Keyword Research', 'Link Building'], desc: 'Research-backed SEO strategies that push you up the rankings, drive high-intent organic traffic, and keep your brand visible month after month.', link: '/service/seo', img: '/assets/Imagesforwebsite/2.jpg', imgAlt: 'Search Engine Optimization analytics and rankings' },
+    { id: 'service-web', title: 'Website Development', pills: ['WordPress', 'Custom Development', 'Responsive Design', 'E-commerce'], desc: 'Fast, conversion-focused websites built to turn visitors into customers. From landing pages to full e-commerce stores — responsive and results-driven.', link: '/service/webdev', img: '/assets/Imagesforwebsite/3.jpg', imgAlt: 'Website Development - responsive designs on multiple devices' },
     { id: 'service-ads', title: 'Google and Meta Ads', pills: ['Google Ads', 'Meta Ads', 'Retargeting', 'Lead Generation'], desc: 'ROI-driven paid advertising campaigns across Google and Meta that scale your visibility, generate quality leads, and grow revenue confidently.', link: '/service/ads', img: '/assets/Imagesforwebsite/4.jpg', imgAlt: 'Google and Meta Ads - performance dashboard' },
     { id: 'service-content', title: 'Content Writing', pills: ['Blog Posts', 'Website Copy', 'Ad Copy', 'Social Captions'], desc: 'Compelling, SEO-optimised content that tells your brand story, builds authority, and drives conversions — from web copy and blogs to ad scripts.', link: '/service/content', img: '/assets/Imagesforwebsite/5.jpg', imgAlt: 'Content Writing - compelling copy and blog content' },
     { id: 'service-video', title: 'Video Editing', pills: ['Reels & Shorts', 'Promotional Videos', 'Motion Graphics', 'Product Videos'], desc: 'Professional video editing that stops the scroll — from high-energy Instagram reels to polished brand films and product videos.', link: '/service/video', img: '/assets/Imagesforwebsite/6.jpg', imgAlt: 'Video Editing - reels, shorts, and promotional videos' },
@@ -178,11 +178,11 @@ export default function Home() {
   ];
 
   const projects = [
-    { id: 'project-1', name: 'Restaurant Brand Campaign', year: '2025', img: 'assets/Imagesforwebsite/Restaurant.jpg', alt: 'Restaurant brand campaign', tags: ['Social Media', 'Branding'], full: true },
-    { id: 'project-2', name: 'Real Estate Lead Gen', year: '2025', img: 'assets/Imagesforwebsite/real estate lead.png.jpg', alt: 'Real estate lead generation' },
-    { id: 'project-3', name: 'E-Commerce Growth', year: '2024', img: 'assets/Imagesforwebsite/E-commerce.jpg', alt: 'E-commerce growth' },
-    { id: 'project-4', name: 'Event Marketing', year: '2024', img: 'assets/Imagesforwebsite/Event marketing.jpg', alt: 'Event marketing' },
-    { id: 'project-5', name: 'Healthcare Brand', year: '2024', img: 'assets/Imagesforwebsite/Health Care.jpg', alt: 'Healthcare brand' },
+    { id: 'project-1', name: 'Restaurant Brand Campaign', year: '2025', img: '/assets/Imagesforwebsite/Restaurant.jpg', alt: 'Restaurant brand campaign', tags: ['Social Media', 'Branding'], full: true },
+    { id: 'project-2', name: 'Real Estate Lead Gen', year: '2025', img: '/assets/Imagesforwebsite/real estate lead.png.jpg', alt: 'Real estate lead generation' },
+    { id: 'project-3', name: 'E-Commerce Growth', year: '2024', img: '/assets/Imagesforwebsite/E-commerce.jpg', alt: 'E-commerce growth' },
+    { id: 'project-4', name: 'Event Marketing', year: '2024', img: '/assets/Imagesforwebsite/Event marketing.jpg', alt: 'Event marketing' },
+    { id: 'project-5', name: 'Healthcare Brand', year: '2024', img: '/assets/Imagesforwebsite/Health Care.jpg', alt: 'Healthcare brand' },
   ];
 
   const resultsData = [
