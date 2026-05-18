@@ -553,34 +553,21 @@ button {
   justify-content: center;
   padding: 120px var(--container-pad) 60px;
   overflow: hidden;
-  background: #050510;
+  background: #0b0f1a;
 }
 
-/* ─── Video Background ─── */
-.hero__video-bg {
+/* ─── Canvas Background ─── */
+.hero__canvas-bg {
   position: absolute;
   inset: 0;
   z-index: 0;
   overflow: hidden;
 }
 
-.hero__bg-video {
+.hero__canvas {
   width: 100%;
   height: 100%;
-  object-fit: cover;
   display: block;
-  filter: brightness(0.8) saturate(1.35) contrast(1.1);
-}
-
-.hero__video-overlay {
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(180deg, rgba(5, 5, 16, 0.4) 0%, rgba(5, 5, 16, 0.1) 35%, rgba(5, 5, 16, 0.05) 60%, rgba(5, 5, 16, 0.45) 100%),
-    radial-gradient(ellipse 80% 70% at 20% 60%, rgba(167, 139, 250, 0.12), transparent),
-    radial-gradient(ellipse 60% 60% at 75% 35%, rgba(96, 165, 250, 0.1), transparent),
-    radial-gradient(ellipse 50% 50% at 50% 80%, rgba(236, 72, 153, 0.06), transparent);
-  pointer-events: none;
 }
 
 .hero__content {
