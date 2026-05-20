@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import useGSAP, { gsap } from '../hooks/useGSAP';
 import ArrowIcon from '../components/ArrowIcon';
+import HeroCanvas from '../components/HeroCanvas';
 import SEO from '../components/SEO';
 import '../styles/blog.css';
 
@@ -68,10 +69,7 @@ export default function Blog() {
       {/* HERO */}
       <section className="blog-hero" data-theme="dark">
         <div className="blog-hero__bg">
-          <video className="blog-hero__video" autoPlay muted loop playsInline>
-            <source src="/assets/videos/bg_animated.mp4" type="video/mp4" />
-          </video>
-          <div className="blog-hero__overlay"></div>
+          <HeroCanvas />
         </div>
         <div className="blog-hero__content">
           <h1 className="blog-hero__title">

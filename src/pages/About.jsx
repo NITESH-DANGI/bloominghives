@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import useGSAP, { gsap } from '../hooks/useGSAP';
 import ArrowIcon from '../components/ArrowIcon';
+import HeroCanvas from '../components/HeroCanvas';
 import SEO from '../components/SEO';
 import '../styles/about.css';
 
@@ -105,10 +106,7 @@ export default function About() {
       {/* HERO */}
       <section className="about-hero" data-theme="dark">
         <div className="about-hero__bg">
-          <video className="about-hero__video" autoPlay muted loop playsInline>
-            <source src="/assets/videos/bg_animated.mp4" type="video/mp4" />
-          </video>
-          <div className="about-hero__overlay"></div>
+          <HeroCanvas />
         </div>
         <div className="about-hero__content">
           <h1 className="about-hero__title">
