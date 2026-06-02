@@ -1,0 +1,19 @@
+{
+  "name": "Blooming Hives",
+  "short_name": "Blooming Hives",
+  "icons": [
+    {
+      "src": "/assets/images/favicon.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/images/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#0d1b3e",
+  "background_color": "#0d1b3e",
+  "display": "standalone"
+}
