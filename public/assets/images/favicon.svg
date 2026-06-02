@@ -1,8 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <!-- Full-bleed dark navy circle — no transparent corners, matches Logo.png -->
-  <circle cx="256" cy="256" r="256" fill="#0D1B3E"/>
-  <!-- Large serif "BH" — fills the circle, cream/gold like original logo -->
-  <text x="256" y="310" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="280" fill="#EDD9A3" letter-spacing="-12">BH</text>
-  <!-- "BLOOMING HIVES" subtitle — positioned below BH, matching logo layout -->
-  <text x="290" y="360" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-weight="400" font-size="42" fill="#EDD9A3" letter-spacing="5">BLOOMING HIVES</text>
+  <!-- Square dark navy background with rounded corners — fills entire icon space -->
+  <rect width="512" height="512" rx="64" ry="64" fill="#0D1B3E"/>
+  <!-- Large serif "BH" — centered and sized to fill the square -->
+  <text x="256" y="320" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="300" fill="#EDD9A3" letter-spacing="-12">BH</text>
 </svg>
