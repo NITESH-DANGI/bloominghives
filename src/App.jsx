@@ -9,6 +9,7 @@ import FloatingCTA from './components/FloatingCTA';
 import Home from './pages/Home';
 import About from './pages/About';
 import Blog from './pages/Blog';
+import BlogPost from './pages/BlogPost';
 import Contact from './pages/Contact';
 import Service from './pages/Service';
 
@@ -49,6 +50,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:slug" element={<BlogPost />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/service/:slug" element={<Service />} />
         <Route path="*" element={<Navigate to="/" replace />} />

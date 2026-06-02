@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import useGSAP, { gsap } from '../hooks/useGSAP';
 import ArrowIcon from '../components/ArrowIcon';
 import HeroCanvas from '../components/HeroCanvas';
@@ -6,6 +7,7 @@ import SEO from '../components/SEO';
 import '../styles/blog.css';
 
 const posts = [
+  { id: 'post-dm-cost-delhi', cat: 'seo', cats: ['seo', 'performance-marketing', 'social-media', 'branding', 'web-development'], slug: 'digital-marketing-cost-delhi', img: '/assets/images/article-seo.png', alt: 'Digital Marketing Cost in Delhi 2026', title: 'Digital Marketing Cost in Delhi for Small Businesses (2026): Complete Pricing Guide', tags: ['SEO & Content', 'Performance Marketing'], isInternal: true },
   { id: 'post-1', cat: 'social-media', img: '/assets/images/article-social-media.png', alt: 'Social Media Strategy', title: 'Why Your Brand Needs a Social Media Strategy, Not Just Posts', tags: ['Social Media'] },
   { id: 'post-2', cat: 'seo', img: '/assets/images/article-seo.png', alt: "SEO in 2025", title: "SEO in 2025: What's Changed and What Still Matters", tags: ['SEO & Content'] },
   { id: 'post-3', cat: 'branding', img: '/assets/images/blog-brand-identity.png', alt: 'Brand Identity', title: 'Building a Brand Identity That Lasts — Beyond Logos and Colors', tags: ['Branding', 'Strategy'] },
@@ -58,7 +60,10 @@ export default function Blog() {
     }
   });
 
-  const filtered = activeFilter === 'all' ? posts : posts.filter(p => p.cat === activeFilter);
+  const filtered = activeFilter === 'all' ? posts : posts.filter(p => {
+    if (p.cats) return p.cats.includes(activeFilter);
+    return p.cat === activeFilter;
+  });
 
   return (
     <div className="blog-page" ref={containerRef}>
@@ -82,16 +87,17 @@ export default function Blog() {
 
       {/* FEATURED */}
       <section className="blog-featured" data-theme="light">
-        <a href="#" className="blog-featured__card" id="featured-post">
+        <Link to="/blog/digital-marketing-cost-delhi" className="blog-featured__card" id="featured-post">
           <div className="blog-featured__image">
-            <img src="/assets/images/article-meta-ads.png" alt="5 Meta Ads Strategies That Actually Work in 2025" loading="eager" />
+            <img src="/assets/images/article-seo.png" alt="Digital Marketing Cost in Delhi 2026 — Complete Pricing Guide" loading="eager" />
             <div className="blog-featured__categories">
               <span className="blog-tag">Featured</span>
+              <span className="blog-tag">SEO & Content</span>
               <span className="blog-tag">Performance Marketing</span>
             </div>
           </div>
-          <h2 className="blog-featured__title">5 Meta Ads Strategies That Actually Work in 2025</h2>
-        </a>
+          <h2 className="blog-featured__title">Digital Marketing Cost in Delhi for Small Businesses (2026): Complete Pricing Guide</h2>
+        </Link>
       </section>
 
       <div className="blog-divider"><hr /></div>
@@ -108,15 +114,20 @@ export default function Blog() {
       {/* GRID */}
       <section className="blog-grid" data-theme="light">
         <div className="blog-grid__inner">
-          {filtered.map(p => (
-            <a href="#" className="blog-card" data-category={p.cat} id={p.id} key={p.id}>
-              <div className="blog-card__image">
-                <img src={p.img} alt={p.alt} loading="lazy" />
-                <div className="blog-card__tags">{p.tags.map(t => <span className="blog-tag" key={t}>{t}</span>)}</div>
-              </div>
-              <h3 className="blog-card__title">{p.title}</h3>
-            </a>
-          ))}
+          {filtered.map(p => {
+            const CardWrapper = p.isInternal
+              ? ({ children, ...props }) => <Link to={`/blog/${p.slug}`} {...props}>{children}</Link>
+              : ({ children, ...props }) => <a href="#" {...props}>{children}</a>;
+            return (
+              <CardWrapper className="blog-card" data-category={p.cat} id={p.id} key={p.id}>
+                <div className="blog-card__image">
+                  <img src={p.img} alt={p.alt} loading="lazy" />
+                  <div className="blog-card__tags">{p.tags.map(t => <span className="blog-tag" key={t}>{t}</span>)}</div>
+                </div>
+                <h3 className="blog-card__title">{p.title}</h3>
+              </CardWrapper>
+            );
+          })}
         </div>
       </section>
 
