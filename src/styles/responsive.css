@@ -85,23 +85,26 @@
   }
 
   .service-card__visual {
-    height: 280px;
+    height: auto;
   }
 
   .service-card__image-placeholder {
     margin: 0;
     width: 100%;
-    height: 100%;
+    height: auto;
     border-radius: 0 0 24px 24px;
-    min-height: 280px;
+    min-height: unset;
+    aspect-ratio: 16 / 10;
+    object-fit: contain;
   }
 
   .service-card__img {
     margin: 0;
     width: 100%;
-    height: 100%;
+    height: auto;
     border-radius: 0 0 24px 24px;
-    min-height: 280px;
+    min-height: unset;
+    object-fit: contain;
   }
 
   .work-intro {
@@ -304,7 +307,7 @@
   }
 
   .service-card__visual {
-    height: 200px;
+    height: auto;
   }
 
   .service-card__pills {
@@ -650,11 +653,11 @@
   }
 
   .service-card__visual {
-    height: 180px;
+    height: auto;
   }
 
   .service-card__img {
-    min-height: 180px;
+    min-height: unset;
   }
 
   /* ── Approach ── */
